@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://data/scripts/Flashlight.gd" type="Script" id=2]
+
+[node name="Flashlight" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+script = ExtResource( 2 )
+
+[node name="Flashlight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+light_energy = 5.0
+shadow_enabled = true
+shadow_bias = -0.01
+shadow_reverse_cull_face = true
+spot_range = 15.0
+spot_attenuation = 2.4623
+spot_angle = 30.0
+spot_angle_attenuation = 0.615572

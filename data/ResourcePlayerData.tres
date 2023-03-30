@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/scenes/Resources.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+max_health = 10
+health = 10
+max_ammo = 100
+ammo = 4
+max_ammo_mk = 200
+ammo_mk = 100
+max_ammo_gl = 200
+ammo_gl = 100
+max_ammo_kr = 200
+ammo_kr = 100
+max_ammo_tst = 200
+ammo_tst = 12
+max_bullets_mk = 12
+bullets_mk = 12
+max_bullets_gl = 12
+bullets_gl = 12
+max_bullets_kr = 32
+bullets_kr = 12
+max_bullets_tst = 22
+bullets_tst = 12
