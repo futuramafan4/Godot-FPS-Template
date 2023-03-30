@@ -1,2 +1,36 @@
 # Godot-FPS-Template
 Godot 3.5 FPS template with precipitant health and ammo, menus, and basic save/load function.
+This project is based on Droivox Godot Engine FPS - https://github.com/Droivox/Godot-Engine-FPS
+
+This is a fork of my own personal FPS project, with most of the basic features that I have created, or added in from other projects. The added features include: health, health packs, ammo packs, two maps, persistance of health and ammo between maps, basic saving and loading (ammo, health, current map only), menus and a flashlight.
+
+Assets used
+Droivox Godot-Engine-FPS
+MIT
+https://github.com/Droivox/Godot-Engine-FPS
+(base used for weapons and main character)
+
+BigDC
+MIT
+https://github.com/BigDC/MenusPlugin
+(graphics and the menu scene are used, but none of the menu code connected to the menu system was used)
+
+Shargon
+MIT
+https://gitlab.com/ShargonPendragon/godot-save-and-load-system
+(save/Load system was used for saving and loading)
+
+AllSky Free
+MIT
+https://github.com/rpgwhitelock/AllSkyFree_Godot
+(skybox used for demos, might be used later on as skyboxes for other parts)
+
+godot-FirstPersonStarter
+MIT
+https://github.com/Whimfoome/godot-FirstPersonStarter/tree/gd-3.x
+(used the map for the sake of this demo)
+
+Godot_FPS_Tutorial
+MIT
+https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
+(Turret Only)
