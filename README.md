@@ -6,31 +6,31 @@ This is a fork of my own personal FPS project, with most of the basic features t
 
 Assets used
 Droivox Godot-Engine-FPS
-MIT
+(MIT)
 https://github.com/Droivox/Godot-Engine-FPS
 (base used for weapons and main character)
 
 BigDC
-MIT
+(MIT)
 https://github.com/BigDC/MenusPlugin
 (graphics and the menu scene are used, but none of the menu code connected to the menu system was used)
 
 Shargon
-MIT
+(MIT)
 https://gitlab.com/ShargonPendragon/godot-save-and-load-system
 (save/Load system was used for saving and loading)
 
 AllSky Free
-MIT
+(MIT)
 https://github.com/rpgwhitelock/AllSkyFree_Godot
 (skybox used for demos, might be used later on as skyboxes for other parts)
 
 godot-FirstPersonStarter
-MIT
+(MIT)
 https://github.com/Whimfoome/godot-FirstPersonStarter/tree/gd-3.x
 (used the map for the sake of this demo)
 
 Godot_FPS_Tutorial
-MIT
+(MIT)
 https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
 (Turret Only)
