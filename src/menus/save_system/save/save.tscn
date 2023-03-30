@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/menus/components/NavBtn.gd" type="Script" id=1]
+[ext_resource path="res://src/menus/save_system/save/save.gd" type="Script" id=2]
+[ext_resource path="res://src/menus/save_system/save/popup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://data/ResourcePlayerData.tres" type="Resource" id=4]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="save" type="PanelContainer"]
+margin_left = 508.0
+margin_top = 271.0
+margin_right = 1276.0
+margin_bottom = 721.0
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+player_data = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 761.0
+margin_bottom = 443.0
+rect_clip_content = true
+
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 55.0
+margin_bottom = 436.0
+alignment = 1
+
+[node name="save" type="Button" parent="HBoxContainer/Buttons"]
+margin_top = 184.0
+margin_right = 55.0
+margin_bottom = 204.0
+disabled = true
+text = "Save"
+script = ExtResource( 1 )
+call_function = "_on_save_pressed"
+
+[node name="delete" type="Button" parent="HBoxContainer/Buttons"]
+margin_top = 208.0
+margin_right = 55.0
+margin_bottom = 228.0
+disabled = true
+text = "Delete"
+script = ExtResource( 1 )
+call_function = "_on_delete_pressed"
+
+[node name="back" type="Button" parent="HBoxContainer/Buttons"]
+margin_top = 232.0
+margin_right = 55.0
+margin_bottom = 252.0
+focus_neighbour_bottom = NodePath(".")
+text = "Back"
+script = ExtResource( 1 )
+call_function = "switch_panel"
+function_values = "pause"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+margin_left = 59.0
+margin_right = 754.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slots" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+margin_right = 695.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="new_slot" type="Button" parent="HBoxContainer/ScrollContainer/Slots"]
+margin_right = 695.0
+margin_bottom = 20.0
+toggle_mode = true
+group = SubResource( 1 )
+text = "New slot"
+script = ExtResource( 1 )
+call_function = "_on_new_slot_pressed"
+
+[node name="popup" parent="." instance=ExtResource( 3 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 761.0
+margin_bottom = 443.0
+
+[connection signal="pressed" from="HBoxContainer/Buttons/back" to="." method="_on_back_pressed"]
+[connection signal="file_name" from="popup" to="." method="_on_popup_file_name"]

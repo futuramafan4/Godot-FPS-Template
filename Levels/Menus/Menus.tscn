@@ -1,0 +1,373 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/menusplugin/impact.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/Menus/Menus.gd" type="Script" id=2]
+[ext_resource path="res://addons/menusplugin/radios_group.tres" type="ButtonGroup" id=3]
+[ext_resource path="res://addons/menusplugin/image_placeholder.png" type="Texture" id=4]
+[ext_resource path="res://addons/menusplugin/border-title.png" type="Texture" id=5]
+[ext_resource path="res://addons/menusplugin/Slot.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[node name="Menus" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+play_scene = "res://Levels/Test Level/L_Main.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = -0.00546875
+anchor_right = 1.03453
+anchor_bottom = 1.0
+margin_right = -691.2
+rect_min_size = Vector2( 640, 720 )
+rect_scale = Vector2( 2.08, 1 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBC_Main" type="VBoxContainer" parent="."]
+anchor_left = 0.310937
+anchor_top = 0.0791667
+anchor_right = 0.710938
+anchor_bottom = 0.744444
+custom_constants/separation = 100
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="VBC_Main"]
+visible = false
+modulate = Color( 0.423529, 0.654902, 0.905882, 1 )
+position = Vector2( 253, 49 )
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Main"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_Main/CenterContainer"]
+margin_left = 78.0
+margin_right = 433.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "MAIN MENU"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Main"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 386.0
+size_flags_vertical = 0
+custom_constants/separation = 20
+
+[node name="New Game" type="Button" parent="VBC_Main/VBoxContainer" groups=["buttons_main"]]
+margin_right = 512.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "NEW GAME"
+
+[node name="Options" type="Button" parent="VBC_Main/VBoxContainer" groups=["buttons_main"]]
+margin_top = 52.0
+margin_right = 512.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
+text = "OPTIONS"
+
+[node name="Load" type="Button" parent="VBC_Main/VBoxContainer" groups=["buttons_main"]]
+margin_top = 104.0
+margin_right = 512.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
+text = "LOAD"
+
+[node name="Credits" type="Button" parent="VBC_Main/VBoxContainer" groups=["buttons_main"]]
+visible = false
+margin_top = 104.0
+margin_right = 512.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="VBC_Main/VBoxContainer" groups=["buttons_main"]]
+margin_top = 156.0
+margin_right = 512.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+text = "EXIT"
+
+[node name="VBC_Options" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 706.0
+margin_top = 57.0
+margin_right = 1218.0
+margin_bottom = 536.0
+custom_constants/separation = 100
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Options"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_Options/CenterContainer"]
+margin_left = 120.0
+margin_right = 392.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "OPTIONS"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Options"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 525.0
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="Difficulty_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 14.0
+text = "DIFFICULTY"
+
+[node name="Easy" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 78.0
+margin_top = -5.0
+margin_right = 151.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 9 )
+group = ExtResource( 3 )
+text = "Easy"
+
+[node name="Medium" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 154.0
+margin_top = -5.0
+margin_right = 227.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 73, 0 )
+custom_styles/normal = SubResource( 9 )
+group = ExtResource( 3 )
+text = "Medium"
+
+[node name="Hard" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 231.0
+margin_top = -5.0
+margin_right = 304.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 73, 0 )
+custom_styles/normal = SubResource( 9 )
+group = ExtResource( 3 )
+text = "Hard"
+
+[node name="Display_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 59.0
+margin_right = 512.0
+margin_bottom = 73.0
+text = "FULLSCREEN"
+
+[node name="Fullscreen" type="CheckButton" parent="VBC_Options/VBoxContainer/Display_lbl" groups=["checkboxes_option"]]
+margin_left = 86.0
+margin_top = -13.0
+margin_right = 162.0
+margin_bottom = 27.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Visuals_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 118.0
+margin_right = 512.0
+margin_bottom = 132.0
+text = "VFX"
+
+[node name="Vfx" type="CheckButton" parent="VBC_Options/VBoxContainer/Visuals_lbl" groups=["checkboxes_option"]]
+margin_left = 86.0
+margin_top = -13.0
+margin_right = 162.0
+margin_bottom = 27.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Music_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 177.0
+margin_right = 512.0
+margin_bottom = 191.0
+text = "MUSIC"
+
+[node name="Music" type="CheckButton" parent="VBC_Options/VBoxContainer/Music_lbl" groups=["checkboxes_option"]]
+margin_left = 46.0
+margin_top = -14.0
+margin_right = 122.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Sfx_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 236.0
+margin_right = 512.0
+margin_bottom = 250.0
+text = "SFX"
+
+[node name="Sfx" type="CheckButton" parent="VBC_Options/VBoxContainer/Sfx_lbl" groups=["checkboxes_option"]]
+margin_left = 46.0
+margin_top = -14.0
+margin_right = 122.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Back" type="Button" parent="VBC_Options/VBoxContainer" groups=["buttons_option"]]
+margin_top = 295.0
+margin_right = 512.0
+margin_bottom = 327.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+text = "EXIT"
+
+[node name="VBC_SaveLoad" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 706.0
+margin_top = 57.0
+margin_right = 1218.0
+margin_bottom = 536.0
+custom_constants/separation = 100
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_SaveLoad"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_SaveLoad/CenterContainer"]
+margin_left = 83.0
+margin_right = 428.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "SAVE/LOAD"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_SaveLoad"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 498.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBC_SaveLoad/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 223.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBC_SaveLoad/VBoxContainer/ScrollContainer"]
+margin_right = 512.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 37
+
+[node name="Slot" parent="VBC_SaveLoad/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 6 )]
+margin_right = 512.0
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="VBC_SaveLoad/VBoxContainer" groups=["buttons_saveload"]]
+margin_top = 268.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+text = "EXIT"
+
+[node name="VBC_Credits" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 706.0
+margin_top = 57.0
+margin_right = 1218.0
+margin_bottom = 536.0
+custom_constants/separation = 100
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Credits"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Credits_lbl" type="Label" parent="VBC_Credits/CenterContainer"]
+margin_left = 123.0
+margin_right = 388.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "CREDITS"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Credits"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 289.0
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="Credits" type="Label" parent="VBC_Credits/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 14.0
+
+[node name="Back" type="Button" parent="VBC_Credits/VBoxContainer" groups=["buttons_credit"]]
+margin_top = 59.0
+margin_right = 512.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+text = "Back"
+
+[connection signal="pressed" from="VBC_Main/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
+[connection signal="pressed" from="VBC_Main/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBC_Main/VBoxContainer/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="VBC_Main/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

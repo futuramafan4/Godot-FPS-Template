@@ -1,0 +1,195 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://data/scenes/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Test Level/Geometry/Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/AllSkyFree/AllSkyFree_Skyboxes/AllSky_Night_MoonBurst Equirect.png" type="Texture" id=3]
+[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Test Level/Geometry/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Test Level/Geometry/Cube.tscn" type="PackedScene" id=6]
+[ext_resource path="res://data/models/BadGuy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://data/ResourcePlayerData.tres" type="Resource" id=8]
+[ext_resource path="res://data/test/Medkit test.tscn" type="PackedScene" id=9]
+[ext_resource path="res://data/test/change scene.tscn" type="PackedScene" id=10]
+[ext_resource path="res://data/test/ammo packs/ammo pack test mk.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/Test Level/Objects/Painfloor.gd" type="Script" id=12]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.430849, 1, 0.437387 )
+
+[sub_resource type="PanoramaSky" id=2]
+panorama = ExtResource( 3 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+fog_enabled = true
+fog_color = Color( 0.0745098, 0.0901961, 0.117647, 1 )
+fog_sun_color = Color( 0.564706, 0.729412, 0.92549, 1 )
+fog_sun_amount = 0.13
+fog_depth_begin = 0.0
+fog_depth_end = 1024.7
+fog_depth_curve = 0.615572
+fog_height_min = 148.2
+fog_height_max = -171.5
+ssao_radius = 8.1
+ssao_intensity = 4.3
+ssao_radius2 = 40.7
+ssao_intensity2 = 14.6
+ssao_bias = 0.059
+ssao_color = Color( 0.180392, 0.207843, 0.25098, 1 )
+glow_enabled = true
+glow_intensity = 1.86
+glow_strength = 0.87
+glow_bloom = 0.02
+glow_hdr_threshold = 0.44
+glow_bicubic_upscale = true
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 100, 1, 100 )
+
+[node name="L_Main" type="Spatial"]
+
+[node name="ArenaGeometry" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="ArenaGeometry" groups=["concrete"]]
+
+[node name="Floor1" parent="ArenaGeometry/StaticBody" instance=ExtResource( 2 )]
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="ArenaGeometry/StaticBody"]
+transform = Transform( 94.1696, 0, 0, 0, 0.998301, 0, 0, 0, 132.218, 0, -0.248214, 0 )
+shape = SubResource( 1 )
+
+[node name="Wall1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, -20 )
+
+[node name="Wall2" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 20 )
+
+[node name="Wall3" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 5.75, 0 )
+
+[node name="Wall4" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 5.75, 0 )
+
+[node name="Cube1" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 4, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.25, -17.5 )
+
+[node name="Slope1" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0, 0, 0, 1.53209, -2.41045, 0, 1.28558, 2.87267, 0, 0.31, -13.92 )
+
+[node name="Platform1" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 6.25, 0, 0, 0, 0.25, 0, 0, 0, 2, -13.25, 5.75, -17.5 )
+
+[node name="Platform2" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 6.25, 0, 0, 0, 0.25, 0, 0, 0, 2, 13.25, 5.75, -17.5 )
+
+[node name="Platform3" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( -2.73196e-07, 0, 2, 0, 0.25, 0, -6.25, 0, -8.74228e-08, -17.5, 5.75, -1.75 )
+
+[node name="Platform4" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( -2.73196e-07, 0, 2, 0, 0.25, 0, -6.25, 0, -8.74228e-08, 17.5, 5.75, -1.75 )
+
+[node name="SlopeEnd1" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 18, 3.5, 17.5 )
+
+[node name="SlopeEnd2" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -18, 3.5, 17.5 )
+
+[node name="Slope2" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( -3.2476, -0.125, -1.74846e-07, -1.875, 0.216506, 0, 2.83914e-07, 1.09278e-08, -2, 12.87, 1.66, 17.5 )
+
+[node name="Slope3" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 3.2476, 0.125, 0, -1.875, 0.216506, 0, 0, 0, 2, -12.87, 1.66, 17.5 )
+
+[node name="Platform5" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 18, 3.5, 13.5 )
+
+[node name="Platform6" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 14, 3.5, 13.5 )
+
+[node name="Platform7" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 10, 3.5, 13.5 )
+
+[node name="Platform8" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 6, 3.5, 13.5 )
+
+[node name="Platform9" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 2, 3.5, 13.5 )
+
+[node name="Platform10" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -2, 3.5, 13.5 )
+
+[node name="Platform11" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -6, 3.5, 13.5 )
+
+[node name="Platform12" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -10, 3.5, 13.5 )
+
+[node name="Platform13" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -14, 3.5, 13.5 )
+
+[node name="Platform14" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -18, 3.5, 13.5 )
+
+[node name="TooSteep1" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( -3.5, -0.216506, -3.01992e-07, -6.06218, 0.125, -1.51421e-07, 9.87455e-07, 2.32278e-08, -2, 16.5, 5.5, 8.5 )
+
+[node name="TooSteep2" parent="ArenaGeometry" instance=ExtResource( 6 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 2, -16.5, 5.5, 8.5 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
+transform = Transform( -0.0595679, -0.864488, 0.499112, 0, 0.5, 0.866025, -0.998224, 0.0515873, -0.0297839, 0, 5, 0 )
+light_energy = 1.16
+shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_max_distance = 250.0
+
+[node name="WorldEnvironment_MoonBurst" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource( 3 )
+
+[node name="character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38143, 0.250004, 2.95 )
+
+[node name="BadGuy" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38383, 1.40898, -6.33669 )
+
+[node name="barrel2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.832055, 0.277362, -0.480369, 0.335325, -0.941364, 0.0372853, -0.441862, -0.192103, -0.876273, 9.20959, 1.95555, 7.18202 )
+
+[node name="barrel" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.832055, 0.277362, -0.480369, 0.335325, -0.941364, 0.0372854, -0.441862, -0.192103, -0.876272, -6.68327, 1.11566, -9.00304 )
+
+[node name="barrel6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.886706, 0.433674, -0.160244, -0.0203616, -0.309627, -0.950635, -0.461885, 0.846192, -0.265717, 5.18188, 4.30617, 16.0836 )
+
+[node name="barrel5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.963978, 0.263951, 0.0328012, -0.132538, 0.583601, -0.801149, -0.230608, 0.767939, 0.597562, 6.39819, 5.04467, 18.2222 )
+
+[node name="barrel4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.990454, 0.129197, 0.048054, -0.0943718, 0.88965, -0.446783, -0.100475, 0.437981, 0.893349, 4.10863, 5.06021, 17.1633 )
+
+[node name="barrel3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.997579, 0.0619622, 0.0315825, -0.053129, 0.97201, -0.228851, -0.0448787, 0.226618, 0.972949, 13.9649, 3.47066, -3.55643 )
+
+[node name="health" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.35523, 0.75025, 5.93226 )
+
+[node name="warp" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0714, 2.18191, -16.4149 )
+
+[node name="Area" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1635, 0.750257, 10.1758 )
+
+[node name="PainFloor" type="Area" parent="."]
+transform = Transform( 1.98671, 0, 0, 0, 1.01384, 0, 0, 0, 1.59383, 0, -54.5733, 0 )
+script = ExtResource( 12 )
+player_data = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PainFloor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.5005, 0 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="PainFloor" to="PainFloor" method="_on_PainFloor_body_entered"]

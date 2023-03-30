@@ -1,0 +1,472 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://addons/menusplugin/impact.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/Menus/Pause.gd" type="Script" id=2]
+[ext_resource path="res://addons/menusplugin/radios_group.tres" type="ButtonGroup" id=3]
+[ext_resource path="res://addons/menusplugin/Slot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/menusplugin/border-title.png" type="Texture" id=5]
+[ext_resource path="res://src/menus/save_system/save/save.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/menus/save_system/load/load.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/menus/components/NavBtn.gd" type="Script" id=8]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
+
+[node name="Pause" type="CanvasLayer"]
+pause_mode = 2
+visible = false
+script = ExtResource( 2 )
+
+[node name="Panel2" type="Panel" parent="."]
+anchor_left = -0.00234375
+anchor_right = 0.497656
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 720 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.484375
+anchor_top = -0.00277778
+anchor_right = 1.33821
+anchor_bottom = 0.997222
+margin_right = -42.0352
+rect_min_size = Vector2( 640, 720 )
+rect_scale = Vector2( 1.04, 1 )
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBC_Options" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.500781
+anchor_top = 0.00833333
+anchor_right = 1.00078
+anchor_bottom = 0.748611
+custom_constants/separation = 100
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Options"]
+margin_right = 639.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_Options/CenterContainer"]
+margin_left = 183.0
+margin_right = 455.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "OPTIONS"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Options"]
+margin_top = 198.0
+margin_right = 639.0
+margin_bottom = 466.0
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="Music_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_right = 639.0
+margin_bottom = 14.0
+text = "MUSIC"
+
+[node name="Music" type="CheckButton" parent="VBC_Options/VBoxContainer/Music_lbl" groups=["checkboxes_option"]]
+margin_left = 85.0
+margin_top = -14.0
+margin_right = 161.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Sfx_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 59.0
+margin_right = 639.0
+margin_bottom = 73.0
+text = "SFX"
+
+[node name="Sfx" type="CheckButton" parent="VBC_Options/VBoxContainer/Sfx_lbl" groups=["checkboxes_option"]]
+margin_left = 85.0
+margin_top = -14.0
+margin_right = 161.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="Difficulty_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+visible = false
+margin_top = 118.0
+margin_right = 639.0
+margin_bottom = 132.0
+text = "DIFFICULTY"
+
+[node name="Easy" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 78.0
+margin_top = -5.0
+margin_right = 151.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+group = ExtResource( 3 )
+text = "Easy"
+
+[node name="Medium" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 154.0
+margin_top = -5.0
+margin_right = 227.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 73, 0 )
+custom_styles/normal = SubResource( 11 )
+group = ExtResource( 3 )
+text = "Medium"
+
+[node name="Hard" type="CheckBox" parent="VBC_Options/VBoxContainer/Difficulty_lbl" groups=["radios_option"]]
+margin_left = 231.0
+margin_top = -5.0
+margin_right = 304.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 73, 0 )
+custom_styles/normal = SubResource( 11 )
+group = ExtResource( 3 )
+text = "Hard"
+
+[node name="Display_lbl" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 118.0
+margin_right = 639.0
+margin_bottom = 132.0
+text = "FULLSCREEN"
+
+[node name="Fullscreen" type="CheckButton" parent="VBC_Options/VBoxContainer/Display_lbl" groups=["checkboxes_option"]]
+margin_left = 86.0
+margin_top = -13.0
+margin_right = 162.0
+margin_bottom = 27.0
+custom_styles/normal = SubResource( 10 )
+
+[node name="V_Sync" type="Label" parent="VBC_Options/VBoxContainer"]
+margin_top = 177.0
+margin_right = 639.0
+margin_bottom = 191.0
+text = "V Sync"
+
+[node name="Vsync" type="CheckButton" parent="VBC_Options/VBoxContainer/V_Sync" groups=["checkboxes_option"]]
+margin_left = 86.0
+margin_top = -13.0
+margin_right = 162.0
+margin_bottom = 27.0
+custom_styles/normal = SubResource( 10 )
+pressed = true
+
+[node name="Back" type="Button" parent="VBC_Options/VBoxContainer" groups=["buttons_option"]]
+margin_top = 236.0
+margin_right = 639.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "Back to Main Menu"
+
+[node name="Sprite" type="Sprite" parent="VBC_Options"]
+visible = false
+modulate = Color( 0.423529, 0.654902, 0.905882, 1 )
+position = Vector2( 317, 49 )
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="VBC_Main2" type="VBoxContainer" parent="."]
+anchor_left = 0.0429688
+anchor_top = 0.0791667
+anchor_right = 0.442969
+anchor_bottom = 0.759722
+custom_constants/separation = 100
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Main2"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_Main2/CenterContainer"]
+margin_left = 34.0
+margin_right = 478.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Game Paused"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Main2"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 490.0
+size_flags_vertical = 0
+custom_constants/separation = 20
+
+[node name="Pause" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_right = 512.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Resume"
+
+[node name="Options" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_top = 52.0
+margin_right = 512.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "Options"
+
+[node name="Save" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_top = 104.0
+margin_right = 512.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "SAVE"
+
+[node name="Load" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_top = 156.0
+margin_right = 512.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "LOAD"
+
+[node name="Restart" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_top = 208.0
+margin_right = 512.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+text = "Restart"
+
+[node name="Exit" type="Button" parent="VBC_Main2/VBoxContainer" groups=["buttons_main"]]
+margin_top = 260.0
+margin_right = 512.0
+margin_bottom = 292.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 7 )
+text = "Quit"
+
+[node name="VBC_Save" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 706.0
+margin_top = 57.0
+margin_right = 1218.0
+margin_bottom = 536.0
+custom_constants/separation = 100
+
+[node name="CenterContainer" type="CenterContainer" parent="VBC_Save"]
+margin_right = 512.0
+margin_bottom = 98.0
+
+[node name="Menus_lbl" type="Label" parent="VBC_Save/CenterContainer"]
+margin_left = 83.0
+margin_right = 428.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "SAVE/LOAD"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBC_Save"]
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 498.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBC_Save/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 223.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBC_Save/VBoxContainer/ScrollContainer"]
+margin_right = 512.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 37
+
+[node name="Slot" parent="VBC_Save/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+margin_right = 512.0
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="VBC_Save/VBoxContainer" groups=["buttons_saveload"]]
+margin_top = 268.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "EXIT"
+
+[node name="Load" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 706.0
+margin_top = 57.0
+margin_right = 1218.0
+margin_bottom = 536.0
+custom_constants/separation = 100
+
+[node name="Buttons" type="VBoxContainer" parent="Load"]
+margin_right = 512.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="save" type="Button" parent="Load/Buttons"]
+margin_right = 512.0
+margin_bottom = 20.0
+disabled = true
+text = "Save"
+script = ExtResource( 8 )
+call_function = "_on_save_pressed"
+
+[node name="delete" type="Button" parent="Load/Buttons"]
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+disabled = true
+text = "Delete"
+script = ExtResource( 8 )
+call_function = "_on_delete_pressed"
+
+[node name="back" type="Button" parent="Load/Buttons"]
+margin_top = 48.0
+margin_right = 512.0
+margin_bottom = 68.0
+focus_neighbour_bottom = NodePath(".")
+text = "Back"
+script = ExtResource( 8 )
+call_function = "switch_panel"
+function_values = "pause"
+
+[node name="CenterContainer" type="CenterContainer" parent="Load"]
+margin_top = 168.0
+margin_right = 512.0
+margin_bottom = 266.0
+
+[node name="Menus_lbl" type="Label" parent="Load/CenterContainer"]
+margin_left = 83.0
+margin_right = 428.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "SAVE/LOAD"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Load"]
+margin_top = 366.0
+margin_right = 512.0
+margin_bottom = 666.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_vertical = 0
+custom_constants/separation = 45
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Load/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 223.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Load/VBoxContainer/ScrollContainer"]
+margin_right = 512.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 37
+
+[node name="Slot" parent="Load/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource( 4 )]
+margin_right = 512.0
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="Load/VBoxContainer" groups=["buttons_saveload"]]
+margin_top = 268.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 32 )
+custom_fonts/font = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "EXIT"
+
+[node name="save" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = 606.0
+margin_top = 14.0
+margin_right = 1374.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 768, 450 )
+
+[node name="load" parent="." instance=ExtResource( 7 )]
+margin_left = 611.0
+margin_top = 16.0
+margin_right = 1379.0
+margin_bottom = 466.0
+rect_min_size = Vector2( 768, 450 )
+
+[connection signal="toggled" from="VBC_Options/VBoxContainer/Display_lbl/Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="toggled" from="VBC_Options/VBoxContainer/V_Sync/Vsync" to="." method="_on_Vsync_toggled"]
+[connection signal="pressed" from="VBC_Options/VBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="VBC_Main2/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
