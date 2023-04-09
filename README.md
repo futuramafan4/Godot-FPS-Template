@@ -1,6 +1,7 @@
 ![Screenshot from 2023-04-08 23-31-23](https://user-images.githubusercontent.com/86500605/230756371-af7a31c9-77a4-4b91-ab42-bcb8e17124ac.png)
-![Screenshot from 2023-04-08 23-30-52](https://user-images.githubusercontent.com/86500605/230756473-89576335-2943-4470-af27-7a2d15ae20f6.png)
 (Green tent is a healthpack, brown capsule is an ammo pickup for one of the weapons)
+![Screenshot from 2023-04-08 23-30-52](https://user-images.githubusercontent.com/86500605/230756473-89576335-2943-4470-af27-7a2d15ae20f6.png)
+
 
 Godot-FPS-Template
 Godot 3.5 FPS template with precipitant health and ammo, menus, and basic save/load function.
