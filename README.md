@@ -1,13 +1,13 @@
 ![Screenshot from 2023-04-08 23-31-23](https://user-images.githubusercontent.com/86500605/230756371-af7a31c9-77a4-4b91-ab42-bcb8e17124ac.png)
-(Green tent is a healthpack, brown capsule is an ammo pickup for one of the weapons)
+(Red bar in the right corner is the healthbar, Green tent is a healthpack, brown capsule is an ammo pickup for one of the weapons)
 ![Screenshot from 2023-04-08 23-30-52](https://user-images.githubusercontent.com/86500605/230756473-89576335-2943-4470-af27-7a2d15ae20f6.png)
 
 
 Godot-FPS-Template
-Godot 3.5 FPS template with precipitant health and ammo, menus, and basic save/load function.
+Godot 3.5 FPS template with precipitant health and ammo, menus, game config menu/saving, and basic save/load function.
 This project is based on Droivox Godot Engine FPS - https://github.com/Droivox/Godot-Engine-FPS
 
-This is a fork of my own personal FPS project, with most of the basic features that I have created, or added in from other projects. The added features include: health, health packs, ammo packs, two maps, persistance of health and ammo between maps, basic saving and loading (ammo, health, current map only), menus and a flashlight.
+This is a fork of my own personal FPS project, and contains some of the basic features that I have either created or added in from other projects. The added features include: health, health packs, ammo packs, two maps, persistance of health and ammo between maps, basic saving and loading (ammo, health, current map only), menus and a flashlight.
 
 Assets used
 Droivox Godot-Engine-FPS
