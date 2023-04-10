@@ -20,7 +20,6 @@ var acceleration : = Vector3(); # Acceleration Vector
 export (Resource) var player_data
 
 onready var GRAVITY = ProjectSettings.get("physics/3d/default_gravity") / 1000
-onready var animation_tree = $character/AnimationTree
 
 #export (int) var max_health = 100
 var current_health 
