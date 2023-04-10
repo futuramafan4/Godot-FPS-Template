@@ -226,7 +226,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35444, -2.734 )
 cast_to = Vector3( 0, 0, -40 )
 
 [node name="Barrel_End" type="Spatial" parent="Head"]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 4.22162, -11.5493 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 4.22162, -11.9512 )
 
 [node name="Static_Body" type="StaticBody" parent="Head" groups=["enemy"]]
 script = ExtResource( 8 )

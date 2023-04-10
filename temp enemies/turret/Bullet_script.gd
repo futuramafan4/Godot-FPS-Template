@@ -39,10 +39,10 @@ func _physics_process(delta):
 func collided(body):
 	# If we have not hit something already check if the body we collided with has the 'bullet_hit' method.
 	# If it does, then call it, passing our global origin as the bullet collision point.
-	#if hit_something == false:
+	if hit_something == false:
 		if body.has_method("get_hurt"):
 			body.get_hurt(BULLET_DAMAGE)
 	
 	# Set hit_something to true because we've hit an object and set free ourself.
-	#hit_something = true
-	#queue_free()
+	hit_something = true
+	queue_free()
