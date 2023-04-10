@@ -42,9 +42,7 @@ func list_files_in_save_directory() -> Array:
 #
 # Returns Variant
 func open_save_file(file_name:String, write_data = null):
-	var data = {
-		"global_transform" : player.global_transform
-		
+	var data = {	
 	}
 	
 	
