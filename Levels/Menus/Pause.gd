@@ -1,4 +1,5 @@
 extends CanvasLayer
+export (Resource) var player_data
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -23,6 +24,8 @@ func _on_Save_pressed():
 func _on_Restart_pressed():
 	get_tree().paused = false
 	get_tree().change_scene("res://Levels/Test Level/L_Main.tscn")
+	player_data.reset()
+	
 	
 func _on_Options_pressed():
 	$VBC_Main2/VBoxContainer.hide()
