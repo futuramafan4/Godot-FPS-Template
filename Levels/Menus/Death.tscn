@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/menusplugin/impact.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Levels/Menus/Death.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://addons/menusplugin/image_placeholder.png" type="Texture" id=4]
 [ext_resource path="res://addons/menusplugin/border-title.png" type="Texture" id=5]
 [ext_resource path="res://addons/menusplugin/Slot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/menus/save_system/load/load.tscn" type="PackedScene" id=7]
+[ext_resource path="res://data/scenes/Resources.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
@@ -40,6 +42,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+player_data = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -363,6 +366,14 @@ custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 6 )
 text = "Back"
 
+[node name="load" parent="." instance=ExtResource( 7 )]
+margin_left = 611.0
+margin_top = 16.0
+margin_right = 1379.0
+margin_bottom = 466.0
+rect_min_size = Vector2( 768, 450 )
+
 [connection signal="pressed" from="VBC_Main/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="VBC_Main/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBC_Main/VBoxContainer/SaveLoad" to="." method="_on_SaveLoad_pressed"]
 [connection signal="pressed" from="VBC_Main/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

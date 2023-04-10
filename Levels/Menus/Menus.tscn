@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/menusplugin/impact.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Levels/Menus/Menus.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://addons/menusplugin/image_placeholder.png" type="Texture" id=4]
 [ext_resource path="res://addons/menusplugin/border-title.png" type="Texture" id=5]
 [ext_resource path="res://addons/menusplugin/Slot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/menus/save_system/load/load.tscn" type="PackedScene" id=8]
+[ext_resource path="res://data/ResourcePlayerData.tres" type="Resource" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
@@ -33,6 +35,7 @@ bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
 bg_color = Color( 0.423529, 0.654902, 0.905882, 1 )
 
 [node name="Menus" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1280, 720 )
@@ -41,6 +44,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 play_scene = "res://Levels/Test Level/L_Main.tscn"
+player_data = ExtResource( 9 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -366,6 +370,13 @@ rect_min_size = Vector2( 0, 32 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 6 )
 text = "Back"
+
+[node name="load" parent="." instance=ExtResource( 8 )]
+margin_left = 611.0
+margin_top = 16.0
+margin_right = 1379.0
+margin_bottom = 466.0
+rect_min_size = Vector2( 768, 450 )
 
 [connection signal="pressed" from="VBC_Main/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="VBC_Main/VBoxContainer/Options" to="." method="_on_Options_pressed"]
